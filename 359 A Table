@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ull unsigned long long
+#define ll long long
+#define sc scanf
+#define pf printf
+#define pi 3.141592653589793
+#define MP make_pair
+#define PB push_back
+#define debug(x) cout<<x<<endl;
+#define debug2(x,y) cout<<x<<"  "<<y<<endl
+#define star cout<<"*"<<endl;
+#define    getI(a)           scanf("%d", &a)
+#define    getII(a,b)       scanf("%d %d", &a,&b);
+#define    getL(a)         scanf("%lld",&a)
+#define    getLL(a,b)        scanf("%lld%lld",&a,&b)
+#define N 10001
+#define F first
+#define S second
+//int fx[ ]={0,0,+1,-1}; int fy[ ]={+1,-1,0,0};
+//template ends here
+
+int arr[109][109],brr[1000009];
+int calculate(int ro,int kola,int getkolam,int getrow)
+{
+    int colorcell=4;
+    if(getkolam==kola||getkolam==1) colorcell-=2;
+    else if(getrow==ro||getrow==1) colorcell-=2;
+    return colorcell;
+
+}
+int main()
+{
+//freopen("input.txt","r",stdin);
+//int sqrtN = int( sqrt( (double) n) );
+ ios_base::sync_with_stdio(0); cin.tie(0);
+ int a,b,cnt=0,sum=0,i,j,hand,flag=0,c,n,m,k,t,res,maxy=0,miny=12345678910;
+ int row , kolam;
+ while(cin>>row>>kolam)
+ { miny=123456789;
+     for(i=0;i<row;++i)
+     {
+         for(j=0;j<kolam;++j)
+         {
+             cin>>arr[i][j];
+             if(arr[i][j]==1) { res=calculate(row,kolam,j+1,i+1);
+             if(res<miny) miny=res;
+         }
+     }
+}
+cout<<miny<<endl;
+}
+}
+
+
